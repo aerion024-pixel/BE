@@ -46,5 +46,52 @@ export const getProByID = async (req, res) => {
   }
 };
 //CREATE
+
+export const createProduct = async (req, res) => {
+  try {
+    const { category_id, name, price, stock, description } = req.body
+    await pool.query("INSERT INTO products (category_id, name, price, stock, description) VALUES (?,?,?,?,?)", [category_id, name, price, stock, description])
+    return res.status(201).json({
+      status: true,
+        message: "you have a new one",
+    })
+  } catch (error) {
+    return res.status(500).json({
+      status: false,
+      message: error.message,
+    });
+  }
+} 
 //UPDATE
+export const updateProduct = async (req, res) => {
+try {
+  const id = parseInt(req.params.id)
+  const {  category_id, name, price, stock, description, is_active } = req.body
+  await pool.query("UPDATE products SET category_id=?, name=?, price=?, stock=?, description=?, is_active=? WHERE id=?", [category_id, name, price, stock, description, is_active ?? 1, id])
+            return res.status(200).json({
+            status: true, message: "up2date"
+        })
+} catch (error) {
+  return res.status(500).json({
+            status: false, message: error.message
+        })
+}
+}
 //DELETE
+export const deleteProduct = async (req, res) => {
+  try {
+  const id = parseInt(req.params.id);
+    const [products] = await pool.query("DELETE FROM products WHERE id=?", [id]);
+    return res.status(200).json({
+        status: true,
+        message: "delete succ",
+    });
+
+    } catch (error) {
+    return res.status(500).json({
+        status: false,
+        message: "get a new one",
+        error: error.message,
+    });
+    }
+}

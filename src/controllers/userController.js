@@ -113,23 +113,40 @@ export const createUser = async (req, res) => {
 
 export const updateUser = async (req, res) => {
   const id = parseInt(req.params.id);
-  const { name, email, password } = req.body;
-  const [user] = await pool.query(
-    "UPDATE users SET name=?, email=?, password=? WHERE id=?",
-    [name, email, password, id],
-  );
+  const { name, email, password, is_active } = req.body;
+  try {
+  if (!password) {
+    const [user] = await pool.query(
+      "UPDATE users SET name=?, email=?, is_active=? WHERE id=?",
+      [name, email, is_active, id],
+    )
+    return res.status(200).json({
+      status: true,
+      message: "up2date",
+      data: user,
+    });
+  } else {
+    const [user] = await pool.query(
+      "UPDATE users SET name=?, email=?, password=?, is_active=? WHERE id=?",
+      [name, email, password, is_active, id],
+    )
+    return res.status(200).json({
+      status: true,
+      message: "up2date",
+      data: user,
+    });
+  }
   //   const userIndex = USERS.findIndex((u) => u.id === id);
   //   USERS[userIndex] = {
   //     ...USERS[userIndex],
   //     ...(name && { name }),
   //     ...(email && { email }),
   //     ...(password && { password }),
-  try {
-    return res.status(200).json({
-      status: true,
-      message: "up2date",
-      data: user,
-    });
+    // return res.status(200).json({
+    //   status: true,
+    //   message: "up2date",
+    //   data: user,
+    // });
   } catch (error) {
     return res.status(500).json({
       status: false,
@@ -143,13 +160,11 @@ export const updateUser = async (req, res) => {
 export const deleteUser = async (req, res) => {
   const id = parseInt(req.params.id);
   try {
-  
     const [user] = await pool.query("DELETE FROM users WHERE id=?", [id]);
     return res.status(200).json({
       status: true,
       message: "delete succ",
     });
-
   } catch (error) {
     return res.status(500).json({
       status: false,
