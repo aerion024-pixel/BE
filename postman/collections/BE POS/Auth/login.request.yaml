@@ -1,0 +1,6 @@
+$kind: http-request
+url: "{{local}}"
+method: GET
+auth:
+  type: bearer
+order: 1000

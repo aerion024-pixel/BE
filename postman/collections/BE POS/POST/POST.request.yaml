@@ -1,0 +1,39 @@
+$kind: http-request
+url: http://localhost:3000/api/transaction
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"order_number\": \"trs-gopay-067\",\r
+
+    \    \"user_id\": 1,\r
+
+    \    \"payment_method\": 2,\r
+
+    \    \"subtotal\": 20000,\r
+
+    \    \"tax\": 0,\r
+
+    \    \"total\": 20000,\r
+
+    \    \"pay\" : 5000,\r
+
+    \    \"items\": [\r
+
+    \        {\r
+
+    \            \"order_id\": 1,\r
+
+    \            \"product_id\": 1,\r
+
+    \            \"quantity\": 1,\r
+
+    \            \"price\": 20000\r
+
+    \        }\r
+
+    \    ]\r
+
+    }"
+order: 1000
