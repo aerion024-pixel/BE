@@ -1,0 +1,6 @@
+$kind: collection
+description: ""
+variables:
+  - key: json_web_token_0yv9
+    secret: true
+    disabled: false

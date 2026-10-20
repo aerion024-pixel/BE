@@ -1,0 +1,7 @@
+$kind: http-request
+url: "{{local}}/category/11"
+method: PUT
+body:
+  type: json
+  content: "{\r\n    \"name\": \"coffes\"\r\n}"
+order: 4000

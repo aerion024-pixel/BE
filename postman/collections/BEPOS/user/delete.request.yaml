@@ -1,0 +1,11 @@
+$kind: http-request
+url: "{{local}}/user/8"
+method: DELETE
+headers:
+  Accept: application/json
+  "": application/json
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0yv9}}"
+order: 5000

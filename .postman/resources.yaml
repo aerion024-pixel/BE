@@ -2,6 +2,10 @@
 workspace:
   id: c9ae4f9a-3174-4e8d-81e6-bea948931751
 
+cloudResources:
+  collections:
+    ../postman/collections/BEPOS: 5a8076ff-d79f-4052-9e9c-fc64645cb950
+
 # All resources in the `postman/` folder are automatically registered in Local View.
 # Point to additional files outside the `postman/` folder to register them individually. Example:
 #localResources:

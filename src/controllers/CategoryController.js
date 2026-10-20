@@ -47,7 +47,7 @@ export const createCat = async (req, res) => {
                 status: false, message: "name required"
             })
         }
-        const categories = await pool.query("INSERT INTO categories (name) VALUES (?)", [name])
+        const [categories] = await pool.query("INSERT INTO categories (name) VALUES (?)", [name])
         return res.status(201).json({
             status: true, data: categories, message: "you have a new one"
         })

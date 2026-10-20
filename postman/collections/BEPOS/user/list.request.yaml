@@ -1,0 +1,14 @@
+$kind: http-request
+url: "{{local}}/user"
+method: GET
+headers:
+  Accept: application/json
+  Content-Type: application/json
+body:
+  type: json
+  content: ""
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0yv9}}"
+order: 1000
