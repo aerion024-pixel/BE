@@ -8,8 +8,8 @@ body:
         "order_number": "trs-007",
         "user_id": 1,
         "payment_method": 1,
-        "subtotal": 80000,
-        "tax": 0,
+        "subtotal": 81000,
+        "tax": 1000,
         "total": 80000,
         "items": [{
                 "product_id": 3,
@@ -18,4 +18,8 @@ body:
             }
         ]
     }
+auth:
+  type: bearer
+  credentials:
+    token: "{{json_web_token_0yv9}}"
 order: 1000
