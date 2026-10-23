@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{local}}/user/8"
+url: "{{local}}/user/2"
 method: PUT
 headers:
   Accept: application/json
@@ -8,11 +8,11 @@ body:
   type: json
   content: "{\r
 
-    \    \"name\": \"Yudi2\", \"email\": \"yudi@gmail.com\", \"password\": \"12345678\", \"is_active\": 0\r
+    \    \"name\": \"Yudi22\", \"email\": \"yudi@gmail.com\", \"password\": \"12345678\", \"is_active\": 0\r
 
     }"
 auth:
   type: bearer
   credentials:
-    token: "{{json_web_token_0yv9}}"
+    token: "{{json_web_token_0aur}}"
 order: 4000

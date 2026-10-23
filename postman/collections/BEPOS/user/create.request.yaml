@@ -8,11 +8,11 @@ body:
   type: json
   content: "{\r
 
-    \    \"name\": \"Yudi\", \"email\": \"yudi@gmail.com\", \"password\": \"12345678\"\r
+    \    \"name\": \"Dika\", \"email\": \"dika@gmail.com\", \"password\": \"12345678\"\r
 
     }"
 auth:
   type: bearer
   credentials:
-    token: "{{json_web_token_0yv9}}"
+    token: "{{json_web_token_0aur}}"
 order: 3000

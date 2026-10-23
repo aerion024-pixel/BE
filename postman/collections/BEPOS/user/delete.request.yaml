@@ -1,5 +1,5 @@
 $kind: http-request
-url: "{{local}}/user/8"
+url: "{{local}}/user/3"
 method: DELETE
 headers:
   Accept: application/json
@@ -7,5 +7,5 @@ headers:
 auth:
   type: bearer
   credentials:
-    token: "{{json_web_token_0yv9}}"
+    token: "{{json_web_token_0aur}}"
 order: 5000
